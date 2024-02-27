@@ -117,9 +117,11 @@ const Banner = () => {
             <span className="text-green">
               <TypeAnimation
                sequence ={[
-                "Marbel  .",
+                "Marble.",
                 "Pipe  .",
-                "Tiles  ."
+                "Tiles  .",
+                 "Plumbing  ",
+                 "Sanitary "
               ]}
               // typeSpeed = {10}
               // backSpeed = {5}
