@@ -105,12 +105,22 @@ const CheckoutForm = ({price, cart}) => {
 
 
   };
+
+   const calculateTotalPrice = (item) => {
+    return item.price * item.quantity;
+  };
+
+  const cartSubtotal = cart.reduce((total, item) => {
+    return total + calculateTotalPrice(item);
+  }, 0);
+
+  const orderTotal = cartSubtotal;
   return (
     <div className="flex flex-col sm:flex-row justify-start items-start gap-8">
       {/* left side */}
       <div className={`md:w-1/2 space-y-5 w-full bg-indigo-100 card shrink-0 max-w-sm shadow-2xl px-4 py-8 ${isDarkMode ?'dark border' :''}`}>
         <h4 className="text-lg font-bold text-gray">Order Summary<span><TbTruckDelivery /></span></h4>
-        <p>Total Price:<span className="font-bold"> ₹{price}</span></p>
+        <p>Total Price:<span className="font-bold"> ₹{orderTotal.toFixed(2)}</span></p>
         <p>
           Number of Items:
           <span className="font-bold"> {cart.length}</span>
