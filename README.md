@@ -29,20 +29,30 @@ To begin using the Hazi Marble, follow these simple steps:
 **Frontend Technology Stack:** 
 - **React**: A JavaScript library for building user interfaces, offering a component-based architecture for creating interactive UIs.
 - **Redux Toolkit:** A state management library for React applications, providing predictable state management with a single source of truth.
-- **Ant Design:** A UI library for React applications, offering a set of customizable and pre-designed components.
+- **Ant Design:** A UI (daisyUI) library for React applications, offering a set of customizable and pre-designed components.
 - **React Hook Form:** A library for managing form state and validation in React applications, providing a simple and intuitive API.
 - **Axios**: A promise-based HTTP client for making HTTP requests, used for interacting with backend APIs.
 
 **Back-End:** 
 - **Express.js:** A web application framework for Node.js, used for building robust APIs and web applications
-- **TypeScript:** A superset of JavaScript that adds static typing, enhancing code quality and maintainability.
-- **Prisma**: A modern database toolkit for Node.js and TypeScript, used for database access and management.
+- **Javascript:** A superset of JavaScript that adds static typing, enhancing code quality and maintainability.
+- **JWT Token**:SON Web Tokens (JWTs) are a standard way to securely transmit information between parties as a JSON object.
+- **Database**: MongoDB Atlas integrates operational and vector databases in a single, unified platform..
 
  ## Project Screenshot
 ![Hazi Marble OverView](https://github.com/sahanur1111/hazimarblehouse.in.net/blob/main/finalpro-img/01.jpg)
 ![Hazi Marble OverView](https://github.com/sahanur1111/hazimarblehouse.in.net/blob/main/finalpro-img/02.jpg)
 ![Hazi Marble OverView](https://github.com/sahanur1111/hazimarblehouse.in.net/blob/main/finalpro-img/03.jpg)
 
+ ## Project All Routes Screenshot
+
+ ![Hazi Marble OverView](https://github.com/sahanur1111/hazimarblehouse.in.net/blob/main/finalpro-img/jsoncrack.com%20(9).png)
+ 
+
+ ## Project All Schema Screenshot
+
+ ![Hazi Marble OverView](https://github.com/sahanur1111/hazimarblehouse.in.net/blob/main/finalpro-img/jsoncrack.com%20(17).png)
+ 
 ## Contributing:
 
 1. Fork the repository by clicking the "Fork" button on the top right corner of the project's GitHub page. This will create a copy of the project in your own GitHub account.
