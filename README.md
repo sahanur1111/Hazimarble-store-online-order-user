@@ -36,7 +36,7 @@ To begin using the Hazi Marble, follow these simple steps:
 **Back-End:** 
 - **Express.js:** A web application framework for Node.js, used for building robust APIs and web applications
 - **Javascript:** A superset of JavaScript that adds static typing, enhancing code quality and maintainability.
-- **JWT Token**:SON Web Tokens (JWTs) are a standard way to securely transmit information between parties as a JSON object.
+- **JWT Token**:JSON Web Tokens (JWTs) are a standard way to securely transmit information between parties as a JSON object.
 - **Database**: MongoDB Atlas integrates operational and vector databases in a single, unified platform.
 - **Payments**:Stripe's payments platform lets you accept credit cards, debit cards, and popular payment methods around the world.
 
