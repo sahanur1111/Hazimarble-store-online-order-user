@@ -39,7 +39,9 @@ To begin using the Hazi Marble, follow these simple steps:
 - **Prisma**: A modern database toolkit for Node.js and TypeScript, used for database access and management.
 
  ## Project Screenshot
-![DoctorOnCall OverView](https://github.com/Ujjalzaman/Doctor-Appointment/assets/49386888/eeed56ce-3d9a-464d-91e5-588ea81ec5c0)
+![Hazi Marble OverView](https://github.com/sahanur1111/hazimarblehouse.in.net/blob/main/finalpro-img/01.jpg)
+![Hazi Marble OverView](https://github.com/sahanur1111/hazimarblehouse.in.net/blob/main/finalpro-img/02.jpg)
+![Hazi Marble OverView](https://github.com/sahanur1111/hazimarblehouse.in.net/blob/main/finalpro-img/03.jpg)
 
 ## Contributing:
 
