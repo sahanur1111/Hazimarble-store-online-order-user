@@ -20,9 +20,6 @@ https://ecommerce-marble-store-app-user.vercel.app/
 - **User Dashboard:** Users can track their orders, view products, and access payment details from a dynamic dashboard.
 - **User Authentication:** Dynamic authentication system allowing user sign-in and sign-up.
 
-<!-- GETTING STARTED -->
-## Getting Started
-To begin using the Hazi Marble, follow these simple steps:
 
 #### What Technology Are Using In This Project
 
