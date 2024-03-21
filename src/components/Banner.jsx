@@ -17,10 +17,8 @@ const Banner = () => {
         }`}
       >
         {/* img */}
-        <div className="md:w-1/2 space-y-7 px-4">
-          <div className="bg-gradient-to-r from-rose-100 to-teal-101 rounded-full">
+        <div className="md:w-1/2 space-y-7 px-4 bg-red">
             <img src={bannerImg} alt="" />
-            </div>
             </div>
           <div className="flex flex-col md:flex-row items-center justify-around -mt-14 gap-4">
             <div className="bg-white px-3 py-2 rounded-2xl flex items-center gap-3 shadow-sm w-64">
