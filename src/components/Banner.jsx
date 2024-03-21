@@ -18,7 +18,7 @@ const Banner = () => {
       >
         {/* img */}
         <div className="md:w-1/2 space-y-7 px-4">
-          <div className="bg-gradient-to-r from-rose-100 to-teal-100 rounded-full">
+          <div className="bg-gradient-to-r from-rose-100 to-teal-101 rounded-full">
             <img src={bannerImg} alt="" />
             </div>
             </div>
