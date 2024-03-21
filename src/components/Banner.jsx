@@ -17,7 +17,7 @@ const Banner = () => {
         }`}
       >
         {/* img */}
-        <div className="md:w-1/2 space-y-7 px-4 bg-red">
+        <div className="md:w-1/2 space-y-7 px-4">
             <img src={bannerImg} alt="" />
             </div>
           <div className="flex flex-col md:flex-row items-center justify-around -mt-14 gap-4">
