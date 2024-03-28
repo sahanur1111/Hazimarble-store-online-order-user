@@ -3,7 +3,7 @@ Preview Website
 https://hazimarblehouse.in.net/
 
 ### Backend server Link
-https://github.com/sahanur1111/Marble-store-app
+https://github.com/sahanur1111/Marble-store-app-server
 
 ##### To Setup Project Follow `project_setup.txt` documentation
 
