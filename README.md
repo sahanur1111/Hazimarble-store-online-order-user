@@ -1,6 +1,8 @@
 # Online Store (Hazi Marble) - Full Stack Website
 Preview Website
-https://ecommerce-marble-store-app-user.vercel.app/
+https://hazimarblehouse.in.net/
+Backend server Link
+https://github.com/sahanur1111/Marble-store-app
 
 ##### To Setup Project Follow `project_setup.txt` documentation
 
