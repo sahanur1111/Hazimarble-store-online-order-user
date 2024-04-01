@@ -17,7 +17,7 @@ import UpdateMenu from "../pages/dashboard/admin/UpdateMenu";
 import Payment from "../pages/menuPage/Payment";
 import ManageBookings from "../pages/dashboard/admin/ManageBookings";
 import Contact from "../contact_us/Contact";
-// import Offers from "../offer";
+import Offer from "../offer/Offer";
 
 const router = createBrowserRouter([
     {
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/offer",
-          // element: <Offers/>
+          element: <Offer/>
         },
         {
           path: "/process-checkout",
