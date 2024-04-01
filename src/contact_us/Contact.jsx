@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { FiSend } from "react-icons/fi";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import  Swal  from "sweetalert2";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -59,7 +61,7 @@ const Contact = () => {
             For any question? <span className="text-green ">fill the form</span>
           </h2>
           <div>
-            <form onSubmit={handleSubmit}>
+            <form action="#" onSubmit={handleSubmit}>
               <div className="form-control w-full my-6">
                 <label className="label">
                   <span className="label-text font-semibold">
@@ -69,8 +71,10 @@ const Contact = () => {
                 <input
                   type="text"
                   placeholder="Full Name"
-                  required
                   className="input input-bordered w-full"
+                  value={name}
+                  required
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
               <div className="form-control w-full my-6">
@@ -82,8 +86,10 @@ const Contact = () => {
                 <input
                   type="text"
                   placeholder="Email"
-                  required
                   className="input input-bordered w-full"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               {/* product details */}
@@ -96,6 +102,9 @@ const Contact = () => {
                 <textarea
                   className="textarea textarea-bordered h-24"
                   placeholder="Type here........"
+                  required
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </div>
               <div className="flex justify-end">
