@@ -13,8 +13,8 @@ const Contact = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // EmailJS service ID and template ID, and public key
-    const serviceId = "service_n4qvyc4";
-    const templateId = "template_28q8ika";
+    const serviceId = "service_jxyxwbg";
+    const templateId = "template_otas1nd";
     const publickKey = "Zc0VG_KSAvY09cXsb";
 
     // Create a new object that dynamic temple params
