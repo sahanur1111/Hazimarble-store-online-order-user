@@ -6,6 +6,8 @@ import Slider from "react-slick";
 import { FaHeart} from "react-icons/fa"
 import Cards from "../../components/Cards";
 import { FaAngleRight, FaAngleLeft  } from "react-icons/fa6";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const SampleNextArrow = (props) => {
   const { className, style, onClick } = props;
@@ -85,29 +87,43 @@ const SpecialDishes = () => {
   };
   return (
     <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4 my-20 relative">
-       <div className='text-left'>
-            <p className='subtitle'>Customer Favorites</p>
-            <h2 className='title'>Popular Catagories</h2>
-        </div>
+      <div className='text-left'>
+        <p className='subtitle'>Customer Favorites</p>
+        <h2 className='title'>Popular Categories</h2>
+      </div>
       <div className="md:absolute right-3 top-8 mb-10 md:mr-24">
-        <button onClick={() => slider?.current?.slickPrev()}
-        className=" btn p-2 rounded-full ml-5"
+        <button
+          onClick={() => slider?.current?.slickPrev()}
+          className="btn p-2 rounded-full ml-5"
         >
-        <FaAngleLeft className=" h-8 w-8 p-1"/>
+          <FaAngleLeft className="h-8 w-8 p-1" />
         </button>
         <button
           className="bg-green btn p-2 rounded-full ml-5"
           onClick={() => slider?.current?.slickNext()}
         >
-          <FaAngleRight className=" h-8 w-8 p-1"/>
+          <FaAngleRight className="h-8 w-8 p-1" />
         </button>
       </div>
-
-      <Slider ref={slider} {...settings} className="overflow-hidden mt-10 space-x-5">
-        {recipes.map((item, i) => (
-          <Cards item={item} key={i}/>
-        ))}
-      </Slider>
+      <Carousel
+        infiniteLoop
+        autoPlay
+        showStatus={false}
+        showArrows={false}
+        showThumbs={false}
+        interval={2000}
+      >
+        <Slider ref={slider} {...settings} className="overflow-hidden mt-10 space-x-5">
+          {recipes.map((item, i) => (
+            <Cards item={item} key={i+1} />
+          ))}
+        </Slider>
+        <Slider ref={slider} {...settings} className="overflow-hidden mt-10 space-x-5">
+          {recipes.map((item, i) => (
+            <Cards item={item} key={i++} />
+          ))}
+        </Slider>
+      </Carousel>
     </div>
   );
 };
