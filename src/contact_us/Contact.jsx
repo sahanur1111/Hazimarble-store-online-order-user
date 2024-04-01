@@ -1,6 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
+import { FiSend } from "react-icons/fi";
 
 const Contact = () => {
+
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // EmailJS service ID and template ID, and public key
+    const serviceId = "service_n4qvyc4";
+    const templateId = "template_28q8ika";
+    const publickKey = "Zc0VG_KSAvY09cXsb";
+
+    // Create a new object that dynamic temple params
+
+    const templateParams = {
+      from_name: name,
+      form_email: email,
+      to_name: "Sahanur",
+      message: message,
+    };
+
+    // send the email using EmailJS
+    emailjs
+      .send(serviceId, templateId, templateParams, publickKey)
+      .then((response) => {
+        console.log("Email sent successfully", response);
+        if(response){
+        Swal.fire({
+          position: "top-right",
+          icon: "success",
+          title: `Hey ${name}, Your Message has been sent`,
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+        setName("");
+        setEmail("");
+        setMessage("");
+      })
+      .catch((err) => {
+        console.log("Error sending email:", err);
+      });
+  };
   return (
     <div className="section-container py-8">
       {" "}
@@ -58,48 +103,7 @@ const Contact = () => {
               <label className="label">
                 <span className="label-text font-semibold">Category<span className="text-red">*</span></span>
               </label>
-              <select
-                defaultValue="default"
-                {...register("category", { required: true })}
-                className="select select-bordered w-full"
-              >
-                <option disabled value="default">
-                  Select a category
-                </option>
-                <option value="marble">Marble</option>
-                <option value="wall">Wall Tiles</option>
-                <option value="floor">Floor Tiles</option>
-                <option value="plumbing">Plumbing</option>
-                <option value="sanitary">Sanitary</option>
-                <option value="popular">Popular</option>
-                <option value="offer">Offer</option>
-              </select>
             </div>
-
-            {/* price */}
-            <div className="form-control w-full my-6">
-              <label className="label">
-                <span className="label-text font-semibold">Price<span className="text-red">*</span></span>
-              </label>
-              <input
-                type="number"
-                placeholder="Price"
-                {...register("price", { required: true })}
-                className="input input-bordered w-full"
-              />
-            </div>
-          </div>
-           {/* optional */}
-           <div className="form-control w-full">
-            <label className="label">
-              <span className="label-text font-semibold">Only for Special</span>
-            </label>
-            <input
-              type="text"
-              {...register("optional", { required: true })}
-              placeholder="2 Special word"
-              className="input input-bordered w-full"
-            />
           </div>
           {/* product details */}
           <div className="form-control">
@@ -112,17 +116,8 @@ const Contact = () => {
               placeholder="Type some word about your product up to 20 words."
             ></textarea>
           </div>
-             {/* 4th row */}
-          <div className="form-control w-full my-6">
-            <input
-              {...register("image", { required: true })}
-              type="file"
-              className="file-input w-full max-w-xs"
-            />
-          </div>
-
           <button className="btn bg-green text-white px-6">
-            Add Item <AiTwotoneFileAdd/>
+            Send Message <FiSend />
           </button>
         </form>
       </div>
