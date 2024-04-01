@@ -111,7 +111,7 @@ const SpecialDishes = () => {
         showStatus={false}
         showArrows={false}
         showThumbs={false}
-        interval={2000}
+        interval={6000}
       >
         <Slider ref={slider} {...settings} className="overflow-hidden mt-10 space-x-5">
           {recipes.map((item, i) => (
