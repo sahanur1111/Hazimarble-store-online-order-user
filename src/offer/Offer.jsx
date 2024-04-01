@@ -6,7 +6,7 @@ import img2 from "../../public/images/home/banner2.png";
 
 const Offer = () => {
   return (
-    <div>
+    <div className='py-36'>
       <Carousel
         infiniteLoop
         autoPlay
