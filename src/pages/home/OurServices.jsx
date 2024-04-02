@@ -84,6 +84,7 @@ const OurServices = () => {
           showStatus={false}
           showArrows={false}
           showThumbs={false}
+          showIndicators={false}
           interval={700}
         >
           <div className="md:w-1/2">
