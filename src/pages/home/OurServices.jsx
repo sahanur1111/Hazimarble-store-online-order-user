@@ -1,5 +1,7 @@
 import React from "react";
 import { FaSmileBeam } from "react-icons/fa";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const serviceLists = [
   {
@@ -66,6 +68,14 @@ const OurServices = () => {
           </div>
         </div>
         {/* imgages */}
+        <Carousel
+        infiniteLoop
+        autoPlay
+        showStatus={false}
+        showArrows={false}
+        showThumbs={false}
+        interval={1000}
+      >
         <div className="md:w-1/2">
           <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 items-center">
             {serviceLists.map((service) => (
@@ -80,6 +90,21 @@ const OurServices = () => {
             ))}
           </div>
         </div>
+        <div className="md:w-1/2">
+          <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 items-center">
+            {serviceLists.map((service) => (
+              <div
+                key={service.id}
+                className="shadow-md rounded-sm py-5 px-4 text-center space-y-2 text-green cursor-pointer hover: border-indigo-600 transition-all duration-100 hover:border"
+              >
+                <img src={service.image} alt="" className="mx-auto" />
+                <h5 className="pt-3 font-semibold">{service.title}</h5>
+                <p className="text-[#90BD95]">{service.des}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        </Carousel>
       </div>
     </div>
   );
