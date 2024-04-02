@@ -2,14 +2,15 @@ import React from "react";
 import { FaSmileBeam } from "react-icons/fa";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import img5 from "/images/home/services/icon1.png";
 
 const serviceLists = [
-  {
-    id: 1,
-    title: "Online",
-    des: "Online Order free Now",
-    image: "/images/home/services/icon1.png",
-  },
+  // {
+  //   id: 1,
+  //   title: "Online",
+  //   des: "Online Order free Now",
+  //   image: "/images/home/services/icon1.png",
+  // },
   {
     id: 2,
     title: "Online",
@@ -51,15 +52,24 @@ const OurServices = () => {
             </button> */}
             {/* click */}
             <div className="dropdown">
-              <div tabIndex={0} role="button" className="btn bg-green text-white px-8 py-3 rounded-full">
-                Click Me <sub><FaSmileBeam/></sub>
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn bg-green text-white px-8 py-3 rounded-full"
+              >
+                Click Me{" "}
+                <sub>
+                  <FaSmileBeam />
+                </sub>
               </div>
               <div
                 tabIndex={0}
                 className="dropdown-content z-[1] card card-compact w-64 p-2 shadow bg-cyan-300 text-primary-content"
               >
                 <div className="card-body">
-                  <h3 className="card-title text-orange-400 italic">Hazi Marble House</h3>
+                  <h3 className="card-title text-orange-400 italic">
+                    Hazi Marble House
+                  </h3>
                   <p className="text-black">Thank you for click me!❤️</p>
                   <p className="text-primary">Visit again!</p>
                 </div>
@@ -69,42 +79,46 @@ const OurServices = () => {
         </div>
         {/* imgages */}
         <Carousel
-        infiniteLoop
-        autoPlay
-        showStatus={false}
-        showArrows={false}
-        showThumbs={false}
-        interval={1000}
-      >
-        <div className="md:w-1/2">
-          <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 items-center">
-            {serviceLists.map((service) => (
-              <div
-                key={service.id}
-                className="shadow-md rounded-sm py-5 px-4 text-center space-y-2 text-green cursor-pointer hover: border-indigo-600 transition-all duration-100 hover:border"
-              >
-                <img src={service.image} alt="" className="mx-auto" />
-                <h5 className="pt-3 font-semibold">{service.title}</h5>
-                <p className="text-[#90BD95]">{service.des}</p>
+          infiniteLoop
+          autoPlay
+          showStatus={false}
+          showArrows={false}
+          showThumbs={false}
+          interval={700}
+        >
+          <div className="md:w-1/2">
+            <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 items-center">
+              <div className="shadow-md rounded-sm py-5 px-4 text-center space-y-2 text-green cursor-pointer hover: border-indigo-600 transition-all duration-100 hover:border">
+                <img src={img5} alt="" className="mx-auto" />
+                <h5 className="pt-3 font-semibold">Online</h5>
+                <p className="text-[#90BD95]">Online Order free Now</p>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-        <div className="md:w-1/2">
-          <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 items-center">
-            {serviceLists.map((service) => (
-              <div
-                key={service.id}
-                className="shadow-md rounded-sm py-5 px-4 text-center space-y-2 text-green cursor-pointer hover: border-indigo-600 transition-all duration-100 hover:border"
-              >
-                <img src={service.image} alt="" className="mx-auto" />
-                <h5 className="pt-3 font-semibold">{service.title}</h5>
-                <p className="text-[#90BD95]">{service.des}</p>
+          <div className="md:w-1/2">
+            <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 items-center">
+              <div className="shadow-md rounded-sm py-5 px-4 text-center space-y-2 text-green cursor-pointer hover: border-indigo-600 transition-all duration-100 hover:border">
+                <img src={img5} alt="" className="mx-auto" />
+                <h5 className="pt-3 font-semibold">Online</h5>
+                <p className="text-[#90BD95]">Online Order free Now</p>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
         </Carousel>
+        <div className="md:w-1/2">
+          <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 items-center">
+            {serviceLists.map((service) => (
+              <div
+                key={service.id}
+                className="shadow-md rounded-sm py-5 px-4 text-center space-y-2 text-green cursor-pointer hover: border-indigo-600 transition-all duration-100 hover:border"
+              >
+                <img src={service.image} alt="" className="mx-auto" />
+                <h5 className="pt-3 font-semibold">{service.title}</h5>
+                <p className="text-[#90BD95]">{service.des}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
