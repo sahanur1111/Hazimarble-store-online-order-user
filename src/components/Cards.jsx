@@ -8,7 +8,7 @@ import axios from 'axios';
 import { useTheme } from "../hooks/ThemeContext";
 
 const Cards = ({ item }) => {
-  const { name, image, price, recipe, _id } = item;
+  const { name, image, price, optional, _id } = item;
   const { isDarkMode } = useTheme();
   const {user} = useContext(AuthContext);
   const [cart, refetch] = useCart();
