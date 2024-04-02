@@ -3,6 +3,9 @@ import { FaSmileBeam } from "react-icons/fa";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import img5 from "/images/home/services/icon1.png";
+import img6 from "/images/home/services/icon2.png";
+import img7 from "/images/home/services/icon3.png";
+import img8 from "/images/home/services/icon4.png";
 
 const serviceLists = [
   // {
@@ -11,24 +14,24 @@ const serviceLists = [
   //   des: "Online Order free Now",
   //   image: "/images/home/services/icon1.png",
   // },
-  {
-    id: 2,
-    title: "Online",
-    des: "Online Order free Now",
-    image: "/images/home/services/icon2.png",
-  },
-  {
-    id: 3,
-    title: "Online",
-    des: "Online Order free Now",
-    image: "/images/home/services/icon3.png",
-  },
-  {
-    id: 4,
-    title: "Online",
-    des: "Online Order free Now",
-    image: "/images/home/services/icon4.png",
-  },
+  // {
+  //   id: 2,
+  //   title: "Online",
+  //   des: "Online Order free Now",
+  //   image: "/images/home/services/icon2.png",
+  // },
+  // {
+  //   id: 3,
+  //   title: "Online",
+  //   des: "Online Order free Now",
+  //   image: "/images/home/services/icon3.png",
+  // },
+  // {
+  //   id: 4,
+  //   title: "Online",
+  //   des: "Online Order free Now",
+  //   image: "/images/home/services/icon4.png",
+  // },
 ];
 
 const OurServices = () => {
@@ -99,14 +102,32 @@ const OurServices = () => {
           <div className="md:w-1/2">
             <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 items-center">
               <div className="shadow-md rounded-sm py-5 px-4 text-center space-y-2 text-green cursor-pointer hover: border-indigo-600 transition-all duration-100 hover:border">
-                <img src={img5} alt="" className="mx-auto" />
+                <img src={img6} alt="" className="mx-auto" />
+                <h5 className="pt-3 font-semibold">Online</h5>
+                <p className="text-[#90BD95]">Online Order free Now</p>
+              </div>
+            </div>
+          </div>
+          <div className="md:w-1/2">
+            <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 items-center">
+              <div className="shadow-md rounded-sm py-5 px-4 text-center space-y-2 text-green cursor-pointer hover: border-indigo-600 transition-all duration-100 hover:border">
+                <img src={img7} alt="" className="mx-auto" />
+                <h5 className="pt-3 font-semibold">Online</h5>
+                <p className="text-[#90BD95]">Online Order free Now</p>
+              </div>
+            </div>
+          </div>
+          <div className="md:w-1/2">
+            <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 items-center">
+              <div className="shadow-md rounded-sm py-5 px-4 text-center space-y-2 text-green cursor-pointer hover: border-indigo-600 transition-all duration-100 hover:border">
+                <img src={img8} alt="" className="mx-auto" />
                 <h5 className="pt-3 font-semibold">Online</h5>
                 <p className="text-[#90BD95]">Online Order free Now</p>
               </div>
             </div>
           </div>
         </Carousel>
-        <div className="md:w-1/2">
+        {/* <div className="md:w-1/2">
           <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 items-center">
             {serviceLists.map((service) => (
               <div
@@ -119,7 +140,7 @@ const OurServices = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
