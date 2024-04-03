@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { createContext } from 'react';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { FacebookAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import app from '../firebase/firebase.config';
@@ -10,6 +10,7 @@ import useAxiosPublic from '../hooks/useAxiosPublic';
 export const AuthContext = createContext();
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
+const facebookAuthProvider = new FacebookAuthProvider();
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
@@ -25,6 +26,11 @@ const AuthProvider = ({children}) => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
     }
+
+    //  signup with account facebook
+   const signUpWithFacebook = () => {
+    return signInWithPopup(auth, facebookAuthProvider);
+}
 
     const login = (email, password) =>{
         return signInWithEmailAndPassword(auth, email, password);
@@ -76,7 +82,8 @@ const AuthProvider = ({children}) => {
         login, 
         logOut,
         signUpWithGmail,
-        updateUserProfile
+        updateUserProfile,
+        signUpWithFacebook
     }
 
     return (

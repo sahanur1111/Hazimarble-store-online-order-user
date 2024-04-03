@@ -8,7 +8,8 @@ import useAxiosPublic from "../hooks/useAxiosPublic";
 const Login = () => {
   const axiosPublic = useAxiosPublic();
   const [errorMessage, seterrorMessage] = useState("");
-  const { signUpWithGmail, login } = useContext(AuthContext);
+  const { signUpWithGmail, login, signUpWithFacebook } = useContext(AuthContext);
+  
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -55,6 +56,24 @@ const Login = () => {
   // login with google
   const handleRegister = () => {
     signUpWithGmail().then(result =>{
+      console.log(result.user);
+      const userInfo = {
+          email: result.user?.email,
+          name: result.user?.displayName
+      }
+      axiosPublic.post('/users', userInfo)
+      .then(res =>{
+          console.log(res.data);
+          alert("Login successful!");
+        
+      })
+      navigate('/');
+  })
+  };
+  // login with facebook
+  const handleRegisterfacebook = () => {
+    // alert("Login with facebook");
+    signUpWithFacebook().then(result =>{
       console.log(result.user);
       const userInfo = {
           email: result.user?.email,
@@ -141,7 +160,7 @@ const Login = () => {
         <button onClick={handleRegister} className="btn btn-circle hover:bg-green hover:text-white">
           <FaGoogle />
         </button>
-        <button className="btn btn-circle hover:bg-green hover:text-white">
+        <button onClick={handleRegisterfacebook} className="btn btn-circle hover:bg-green hover:text-white">
           <FaFacebookF />
         </button>
         <button className="btn btn-circle hover:bg-green hover:text-white">
