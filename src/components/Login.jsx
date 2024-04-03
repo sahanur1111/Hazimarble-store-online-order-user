@@ -72,7 +72,7 @@ const Login = () => {
   };
   // login with facebook
   const handleRegisterfacebook = () => {
-    // alert("Login with facebook");
+    alert("Login with facebook");
     signUpWithFacebook().then(result =>{
       console.log(result.user);
       const userInfo = {
