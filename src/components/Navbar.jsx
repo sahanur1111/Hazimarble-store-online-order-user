@@ -39,33 +39,33 @@ const Navbar = () => {
   const navItems = (
     <>
       <li>
-        <a href="/" className={`text-${isDarkMode ? 'dark' : ''}`}>
+        <Link to="/" className={`text-${isDarkMode ? 'dark' : ''}`}>
           Home
-        </a>
+        </Link>
       </li>
       <li tabIndex={0}>
         <details>
           <summary className={`text-${isDarkMode ? 'dark' : ''}`}>Products</summary>
           <ul className={`p-2 ${isDarkMode ? 'dark' : ''}`}>
             <li>
-              <a href="/menu" className={`text-${isDarkMode ? 'dark' : ''}`}>
+              <Link to="/menu" className={`text-${isDarkMode ? 'dark' : ''}`}>
                 All
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/menu" className={`text-${isDarkMode ? 'dark' : ''}`}>Marble</a>
+              <Link to="/menu" className={`text-${isDarkMode ? 'dark' : ''}`}>Marble</Link>
             </li>
             <li>
-              <a href="/menu" className={`text-${isDarkMode ? 'dark' : ''}`}>Wall Tiles</a>
+              <Link to="/menu" className={`text-${isDarkMode ? 'dark' : ''}`}>Wall Tiles</Link>
             </li>
             <li>
-              <a href="/menu" className={`text-${isDarkMode ? 'dark' : 'dark'}`}>Floor Tiles</a>
+              <Link to="/menu" className={`text-${isDarkMode ? 'dark' : 'dark'}`}>Floor Tiles</Link>
             </li>
             <li>
-              <a href="/menu" className={`text-${isDarkMode ? 'dark' : 'dark'}`}>Plumbing</a>
+              <Link to="/menu" className={`text-${isDarkMode ? 'dark' : 'dark'}`}>Plumbing</Link>
             </li>
             <li>
-              <a href="/menu" className={`text-${isDarkMode ? 'dark' : 'dark'}`}>Sanitary</a>
+              <Link to="/menu" className={`text-${isDarkMode ? 'dark' : 'dark'}`}>Sanitary</Link>
             </li>
           </ul>
         </details>
@@ -81,16 +81,16 @@ const Navbar = () => {
               <a href="/menu" className={`text-${isDarkMode ? 'white' : 'black'}`}>Booking</a>
             </li>
             <li>
-              <a href="/order" className={`text-${isDarkMode ? 'white' : 'black'}`}>Order Tracking</a>
+              <Link to="/order" className={`text-${isDarkMode ? 'white' : 'black'}`}>Order Tracking</Link>
             </li>
           </ul>
         </details>
       </li>
       <li>
-        <a href="/contact" className={`text-${isDarkMode ? 'dark' : 'black'}`}>Contact Us</a>
+        <Link to="/contact" className={`text-${isDarkMode ? 'dark' : 'black'}`}>Contact Us</Link>
       </li>
       <li>
-        <a href="/offer" className={`text-${isDarkMode ? 'dark' : 'black'}`}>Offers</a>
+        <Link to="/offer" className={`text-${isDarkMode ? 'dark' : 'black'}`}>Offers</Link>
       </li>
     </>
   );
@@ -109,20 +109,20 @@ const Navbar = () => {
         <div className="navbar-start">
           <div className="dropdown justify-between">
             <label onClick={toggleMenu} tabIndex={0} className="btn btn-ghost lg:hidden" >
-              <svg
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-              >
+              > */}
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
                 />
-              </svg>
+              {/* </svg> */}
             </label>
             <ul
               tabIndex={0}
@@ -132,9 +132,9 @@ const Navbar = () => {
               {navItems}
             </ul>
           </div>
-          <a href="/">
+          <Link to="/">
             <img className="h-10" src={logo} alt="" />
-          </a>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navItems}</ul>
