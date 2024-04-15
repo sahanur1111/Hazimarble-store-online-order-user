@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTheme } from '../../hooks/ThemeContext';
+import { Link } from 'react-router-dom';
 
 const categoryItems = [
     {id: 1, title: "White marble", despriction: "(86 dishes)", image: "/images/home/category/img7.png"},
@@ -28,6 +29,7 @@ const Catagories = () => {
                         <div className='mt-5 space-y-1'>
                             <h5 className='text-[#1E1E1E] font-semibold'>{item.title}</h5>
                             <p className='text-secondary text-sm'>{item.despriction}</p>
+                            <Link to={`/menu`} className='btn btn-sm hover:bg-red btn-green'>View All</Link>
                         </div>
                     </div>
                 ))

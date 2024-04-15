@@ -19,6 +19,7 @@ const Footer = () => {
             <p className="font-bold">
             Hazi Marbel House ❤️.
             </p>
+            <p>Lohapur, Birbhum, WB</p>
             <hr />
             Providing reliable tech since<scan className="font-bold text-orange-500"> 2019 </scan>.
           </p>
@@ -39,7 +40,7 @@ const Footer = () => {
         </nav>
         <nav>
           <header className="footer-title" href="/contact">Contact Us</header>
-          <a className="link link-hover"><p><IoMdMail/></p>hazi_marble@gmail.com</a>
+          <a className="link link-hover"><p><IoMdMail/></p>hazimarble@gmail.com</a>
           <a className="link link-hover font-bold"><FaPhoneVolume />9064837856</a>
           <a className="link link-hover font-bold">7074574202</a>
           <a className="link link-hover">Social media</a>
