@@ -28,7 +28,7 @@ https://github.com/sahanur1111/Marble-store-app-server
 
 **Frontend Technology Stack:** 
 - **React**: A JavaScript library for building user interfaces, offering a component-based architecture for creating interactive UIs.
-- **Redux Toolkit:** A state management library for React applications, providing predictable state management with a single source of truth.
+- **Context:** A state management library for React applications, providing predictable state management with a single source of truth.
 - **Ant Design:** A UI (daisyUI) library for React applications, offering a set of customizable and pre-designed components.
 - **React Hook Form:** A library for managing form state and validation in React applications, providing a simple and intuitive API.
 - **Axios**: A promise-based HTTP client for making HTTP requests, used for interacting with backend APIs.
