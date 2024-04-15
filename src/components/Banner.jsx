@@ -6,6 +6,7 @@ import { useTheme } from "../hooks/ThemeContext";
 import { TypeAnimation } from "react-type-animation";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   const { isDarkMode } = useTheme();
@@ -165,9 +166,11 @@ const Banner = () => {
               loop
             />
           </p>
+          <Link to="/menu">
           <button className="btn bg-green px-8 py-3 font-semibold text-white rounded-full">
             Order Now
           </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Cards from "../../components/Cards";
 import { FaFilter } from "react-icons/fa";
 import { useTheme } from "../../hooks/ThemeContext";
+import { Link } from "react-router-dom";
 
 const Menu = () => {
   const { isDarkMode } = useTheme();
@@ -102,9 +103,11 @@ const Menu = () => {
               Marble and Tiles House is a premier destination for exquisite
               marble, tiles, and other flooring solutions.
             </p>
+            <Link to="/menu">
             <button className="bg-green font-semibold btn text-white px-8 py-3 rounded-full">
               Order Now
             </button>
+            </Link>
           </div>
         </div>
       </div>
