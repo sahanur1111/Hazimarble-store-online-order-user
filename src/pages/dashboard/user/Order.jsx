@@ -7,7 +7,7 @@ import { useTheme } from "../../../hooks/ThemeContext";
 const Order = () => {
   const { user, loading } = useAuth();
   const token = localStorage.getItem("access_token");
-  const {isDarkMode} = useTheme();
+  const { isDarkMode } = useTheme();
   const { refetch, data: orders = [] } = useQuery({
     queryKey: ["orders", user?.email],
     enabled: !loading,
@@ -35,7 +35,11 @@ const Order = () => {
     <div className={`max-w-screen-2xl container mx-auto xl:px-24 px-4 `}>
       {/* banner */}
       <div className=" bg-gradient-to-r from-0% from-[#FAFAFA] to-[#FCFCFC] to-100%">
-        <div className={`py-28 flex flex-col items-center justify-center ${isDarkMode ? "dark" : "black"}`}>
+        <div
+          className={`py-28 flex flex-col items-center justify-center ${
+            isDarkMode ? "dark" : "black"
+          }`}
+        >
           {/* content */}
           <div className=" text-center px-4 space-y-7">
             <h2 className="md:text-5xl text-4xl font-bold md:leading-snug leading-snug">
@@ -73,7 +77,7 @@ const Order = () => {
                         <td>{item.status}</td>
                         <td>
                           <button className="btn btn-sm border-none text-orange-400 bg-transparent">
-                            Contact
+                            <Link to="/contact">Contact</Link>
                           </button>
                         </td>
                       </tr>
