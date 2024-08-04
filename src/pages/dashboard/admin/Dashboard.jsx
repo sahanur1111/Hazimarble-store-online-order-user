@@ -5,7 +5,6 @@ import useAuth from "../../../hooks/useAuth";
 import { FaBook, FaUsers } from "react-icons/fa";
 import { TbCoinRupeeFilled } from "react-icons/tb";
 import { GrDeliver } from "react-icons/gr";
-
 import {
   BarChart,
   Bar,
@@ -17,15 +16,12 @@ import {
   Pie,
   Legend,
   ResponsiveContainer,
-  ComposedChart,
+  AreaChart,
   Tooltip,
   Area,
-  Line,
-  AreaChart,
 } from "recharts";
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
-// const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -39,7 +35,6 @@ const Dashboard = () => {
     },
   });
 
-  console.log(stats);
   const { data: chartData = [] } = useQuery({
     queryKey: ["order-stats"],
     queryFn: async () => {
@@ -48,25 +43,7 @@ const Dashboard = () => {
     },
   });
 
-  // custom shape for the bar chart
-  const getPath = (x, y, width, height) => {
-    return `M${x},${y + height}C${x + width / 3},${y + height} ${
-      x + width / 2
-    },${y + height / 3}
-    ${x + width / 2}, ${y}
-    C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${
-      x + width
-    }, ${y + height}
-    Z`;
-  };
-
-  const TriangleBar = (props) => {
-    const { fill, x, y, width, height } = props;
-
-    return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
-  };
-
-  // custom shape for the pie chart
+  // Custom label for the pie chart
   const RADIAN = Math.PI / 180;
   const renderCustomizedLabel = ({
     cx,
@@ -75,6 +52,7 @@ const Dashboard = () => {
     innerRadius,
     outerRadius,
     percent,
+    index,
   }) => {
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
     const x = cx + radius * Math.cos(-midAngle * RADIAN);
@@ -93,20 +71,21 @@ const Dashboard = () => {
     );
   };
 
-  const pieChartData = chartData.map((data) => {
-    return { name: data.category, value: data.revenue };
-  });
+  const pieChartData = chartData.map((data) => ({
+    name: data.category,
+    value: data.revenue,
+  }));
 
   return (
     <div className="w-full md:w-[870px] mx-auto px-4">
       <h2 className="text-2xl font-semibold my-4">
         Hey, <span className="text-gray">{user.displayName}</span>
       </h2>
-      {/* stats */}
+      {/* Stats */}
       <div className="stats shadow flex flex-col md:flex-row">
         <div className="stat bg-emerald-200">
           <div className="stat-figure text-secondary">
-            <TbCoinRupeeFilled className="text-3xl"></TbCoinRupeeFilled>
+            <TbCoinRupeeFilled className="text-3xl" />
           </div>
           <div className="stat-title">Revenue</div>
           <div className="stat-value">₹{stats.revenue}</div>
@@ -115,7 +94,7 @@ const Dashboard = () => {
 
         <div className="stat bg-orange-200">
           <div className="stat-figure text-secondary">
-            <FaUsers className="text-3xl"></FaUsers>
+            <FaUsers className="text-3xl" />
           </div>
           <div className="stat-title">Users</div>
           <div className="stat-value">{stats.users}</div>
@@ -124,7 +103,7 @@ const Dashboard = () => {
 
         <div className="stat bg-indigo-400">
           <div className="stat-figure text-secondary">
-            <FaBook className="text-3xl"></FaBook>
+            <FaBook className="text-3xl" />
           </div>
           <div className="stat-title">Product Items</div>
           <div className="stat-value">{stats.menuItems}</div>
@@ -133,7 +112,7 @@ const Dashboard = () => {
 
         <div className="stat bg-purple-300">
           <div className="stat-figure text-secondary">
-            <GrDeliver className="text-3xl"></GrDeliver>
+            <GrDeliver className="text-3xl" />
           </div>
           <div className="stat-title">Orders</div>
           <div className="stat-value">{stats.orders}</div>
@@ -141,20 +120,15 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* bar & pie chart */}
+      {/* Charts */}
       <div className="mt-16 flex flex-col sm:flex-row">
-        {/* bar chart */}
+        {/* Area Chart */}
         <div className="sm:w-1/2 w-full">
           <div style={{ width: "100%", height: 300 }}>
             <ResponsiveContainer>
               <AreaChart
                 data={chartData}
-                margin={{
-                  top: 10,
-                  right: 30,
-                  left: 0,
-                  bottom: 0,
-                }}
+                margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="category" />
@@ -171,7 +145,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* pie chart */}
+        {/* Pie Chart */}
         <div className="sm:w-1/2 w-full">
           <div style={{ width: "100%", height: 300 }}>
             <ResponsiveContainer width="100%" height="100%">
