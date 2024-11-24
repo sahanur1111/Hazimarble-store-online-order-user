@@ -18,7 +18,7 @@ https://github.com/sahanur1111/Marble-store-app-server
 - **Easy Online Ordering:** Customers can use the website to place orders.
 - **Dynamic Item Management:** Flexible time and date range selection for items.
 - **Industry-standard Code Quality:** Utilization of top-notch code conventions, code splitting, and JavaScript in backend development.
-- **Payment Gateway Integration:** Users should have the flexibility to choose their preferred payment options like cash on delivery, debit/credit cards.
+- **Payment Gateway Integration:** Users should have the flexibility to choose their preferred payment options like debit/credit cards.
 - **Admin Dashboard:** Dynamic dashboard for admins to access user, product, and payment information.
 - **User Dashboard:** Users can track their orders, view products, and access payment details from a dynamic dashboard.
 - **User Authentication:** Dynamic authentication system allowing user sign-in and sign-up.
