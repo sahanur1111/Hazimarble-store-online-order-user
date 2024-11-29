@@ -57,13 +57,13 @@ const Profile = ({ user, admin}) => {
             <li>
               <a><IoSettingsSharp /> Settings</a>
             </li>
-               {admin && (
-              <li>
-                <Link to="/dashboard">
-                  <MdDashboard /> Dashboard
-                </Link>
-              </li>
-            )}
+              {user?.admin && (
+  <li>
+    <Link to="/dashboard">
+      <MdDashboard /> Dashboard
+    </Link>
+  </li>
+)}
             <li>
               <a onClick={handleLogout}><TbLogout2 /> Logout</a>
             </li>
