@@ -8,7 +8,7 @@ import { IoSettingsSharp } from "react-icons/io5";
 import { MdDashboard } from "react-icons/md";
 import { TbLogout2 } from "react-icons/tb";
 
-const Profile = ({ user, admin}) => {
+const Profile = ({ user}) => {
   const { logOut } = useContext(AuthContext);
   const navigate = useNavigate()
 
@@ -57,7 +57,7 @@ const Profile = ({ user, admin}) => {
             <li>
               <a><IoSettingsSharp /> Settings</a>
             </li>
-              {user?.admin && (
+              {user?.isAdmin && (
   <li>
     <Link to="/dashboard">
       <MdDashboard /> Dashboard
